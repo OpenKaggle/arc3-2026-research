@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "snapshot_utc": "2026-09-11T01:09:38Z",
+  "sources": [
+    {
+      "repository": "https://github.com/arcprize/ARC-AGI.git",
+      "head": "f12822c4d550121c35a275008d964afbbed47d2f",
+      "license_api": "MIT"
+    },
+    {
+      "repository": "https://github.com/arcprize/ARC-AGI-3-Agents.git",
+      "head": "4743e7d0aaae0ded0d98a89a7e282e63564cd58b",
+      "license_api": "MIT"
+    },
+    {
+      "repository": "https://github.com/arcprize/ARC-AGI-3-Kaggle-Starter.git",
+      "head": "eeb1535404f321d280a8f9194bbc1d7aca5f05fc",
+      "license_api": null,
+      "note": "No repository license was detected by the GitHub API; do not copy until license scope is resolved."
+    },
+    {
+      "repository": "https://github.com/arcprize/arc-agi-3-benchmarking.git",
+      "head": "eb6b8cd5ca8ad001339bb0184fdb979e93031679",
+      "license_api": "MIT"
+    }
+  ],
+  "kaggle_bundle": {
+    "arc_agi": "0.9.8",
+    "arcengine": "0.9.3",
+    "acquired": false,
+    "hashes_frozen": false
+  }
+}

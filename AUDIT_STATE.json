@@ -1,0 +1,19 @@
+{
+  "campaign": "arc-prize-2026-arc-agi-3",
+  "schema_version": "1.0",
+  "snapshot_utc": "2026-09-11T01:12:43Z",
+  "stage": "IDENTITY_BLOCKED",
+  "kaggle_joined": false,
+  "competition_data_downloaded": false,
+  "private_evaluation_opened": false,
+  "submission_made": false,
+  "gpu_used": false,
+  "legacy_assets_mounted": false,
+  "license_grant_authorized": false,
+  "next_authorized_action": "COLLECT_USER_IDENTITY_ATTESTATION",
+  "notes": [
+    "Kaggle API returned userHasEntered=False at 2026-09-11T01:09:38Z.",
+    "No action after the identity gate is implicitly authorized.",
+    "Official-page conflicts are documented in docs/RULES_AUDIT.md."
+  ]
+}

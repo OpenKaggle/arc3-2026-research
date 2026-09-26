@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.kaggle/
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Acquired or generated material is never committed by default.
+data/
+environment_files/
+models/
+outputs/
+runs/
+notebooks/*.ipynb
+*.parquet
+*.log

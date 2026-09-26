@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: >-
+  If this clean-room snapshot supports your work, cite it as software and
+  review NOTICE.md for competition and third-party licensing boundaries.
+title: ARC Prize 2026 ARC-AGI-3 Clean-Room Snapshot
+type: software
+authors:
+  - name: OpenKaggle contributors
+repository-code: https://github.com/openkaggle/arc3-2026-research
+license: MIT
+abstract: >-
+  Identity-blocked public snapshot of ARC-AGI-3 policy, clean-room boundaries,
+  source inventory, and baseline planning records.

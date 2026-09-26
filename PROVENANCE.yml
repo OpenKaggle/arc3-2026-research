@@ -1,0 +1,45 @@
+schema_version: 1
+repository:
+  name: arc3-2026-research
+  url: https://github.com/openkaggle/arc3-2026-research
+snapshot:
+  kind: public-clean-room-snapshot
+  status: identity_blocked
+  status_note: >-
+    Conditional clean-room research plan blocked on the documented identity
+    gate; the snapshot does not authorize joining or evaluation access.
+  rules_checked_at: "2026-09-11T01:12:43Z"
+  rules_check_note: >-
+    This is the README status timestamp attached to its statement that rules
+    had been audited, not a current rules revalidation.
+competitions:
+  - name: ARC Prize 2026 - ARC-AGI-3
+    url: https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3
+included:
+  - policy, feasibility, and clean-room boundary documentation
+  - identity gate, migration matrix, and baseline protocol
+  - audit state, source-head records, denylist, and lightweight receipt
+excluded:
+  - competition data
+  - private-team material
+  - hidden or evaluation data and answers
+  - generated submissions, credentials, models, and runtime outputs
+licensing:
+  original_work: MIT
+  boundary: >-
+    MIT covers only original OpenKaggle clean-room scaffolding and
+    documentation for which contributors hold rights.
+  third_party: >-
+    Official code, model assets, third-party notebooks, datasets, and any
+    separately licensed subtree retain their own terms.
+reproduction:
+  guide: REPRODUCIBILITY.md
+  documented_entry_points:
+    - docs/IDENTITY_GATE.md
+    - docs/BASELINE_PROTOCOL.md
+    - docs/RULES_AUDIT.md
+    - AUDIT_STATE.json
+claims:
+  joined: false
+  current_final_ready: false
+  score_claim_added_by_release_docs: false

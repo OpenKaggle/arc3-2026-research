@@ -1,0 +1,10 @@
+../arc2_paper/official/competition_files
+../arc2_paper/evaluator_only
+../arc2_paper/artifacts
+../arc2_paper/kaggle_runs
+../arc2_paper/candidate_notebooks
+../arc2_paper/public_notebooks
+../arc2_paper/paper/results
+../arc2_paper/public_assets
+../arc2_paper/experiment_log.csv
+../arc2_paper/paper/07_evidence_registry.md
