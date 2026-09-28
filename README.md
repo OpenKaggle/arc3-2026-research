@@ -1,4 +1,4 @@
-# ARC Prize 2026 — ARC-AGI-3 clean-room campaign
+# [2026-11] ARC Prize 2026 — ARC-AGI-3 clean-room campaign
 
 > **Public clean-room snapshot — identity-blocked.** This repository preserves
 > the policy, audit, and baseline-planning state recorded below. It contains no
