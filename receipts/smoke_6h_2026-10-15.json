@@ -1,0 +1,189 @@
+{
+ "schema_version": 1,
+ "milestone": "6h_smoke",
+ "run_at_utc": "2026-10-14T19:02:30Z",
+ "versions": {
+  "arc_agi": "0.9.9",
+  "python": "3.12.3",
+  "framework_head": "4743e7d0aaae0ded0d98a89a7e282e63564cd58b",
+  "starter_head": "eeb1535404f321d280a8f9194bbc1d7aca5f05fc",
+  "agent_sha256": "8496fedd12f22c07683d1a6c7d5ea31518d90ed05b9294a9ba52e4694be92d40"
+ },
+ "coverage": {
+  "games": 25,
+  "passes": 2,
+  "total_steps_pass0": 10000,
+  "target_steps": 10000
+ },
+ "legality": {
+  "violations_pass0": 0,
+  "violations_pass1": 0,
+  "crashes_pass0": 0,
+  "crashes_pass1": 0
+ },
+ "determinism": {
+  "same_trajectory_hash": true,
+  "sha0": "95b45e1edd6183ecfa6181d3b4408405c4a67575dbd847ddf12db1d8bdb60906",
+  "sha1": "95b45e1edd6183ecfa6181d3b4408405c4a67575dbd847ddf12db1d8bdb60906"
+ },
+ "per_game_pass0": {
+  "tu93": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "ar25": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "re86": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "su15": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "m0r0": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "cn04": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "ft09": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "tr87": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "sc25": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "lp85": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "dc22": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "sp80": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "ka59": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "g50t": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "sb26": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "lf52": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "bp35": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "s5i5": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "r11l": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "sk48": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "wa30": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "vc33": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "ls20": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "cd82": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  },
+  "tn36": {
+   "state": "GameState.NOT_FINISHED",
+   "levels_completed": 0,
+   "steps": 400,
+   "illegal": 0
+  }
+ },
+ "wall_seconds": 133.631,
+ "peak_rss_mb": 185.3,
+ "denylist_accessed": false,
+ "gate_6h": {
+  "ten_thousand_steps_zero_illegal": true,
+  "replay_deterministic": true,
+  "zero_crashes": true
+ }
+}

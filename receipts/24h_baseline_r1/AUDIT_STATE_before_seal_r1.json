@@ -1,0 +1,23 @@
+{
+ "campaign": "arc-prize-2026-arc-agi-3",
+ "schema_version": "1.0",
+ "snapshot_utc": "2026-10-15T10:50:30.814608Z",
+ "stage": "24H_BASELINE_R1_RERUN_IN_PROGRESS",
+ "kaggle_joined": false,
+ "competition_data_downloaded": false,
+ "private_evaluation_opened": false,
+ "submission_made": false,
+ "gpu_used": false,
+ "legacy_assets_mounted": false,
+ "license_grant_authorized": false,
+ "next_authorized_action": "FOLD_R1_RECEIPT_ON_COMPLETION_THEN_PASS_OR_SEAL",
+ "notes": [
+  "2026-10-15: 24h milestone run COMPLETED. Gate FAILED as preregistered: baseline 3 levels vs best anchor (uniform-random) 8; strictly_above_best_anchor=false. Integrity green: 100% legal, 0 crashes, p99=4.42ms, RSS=134.2MB. Result: receipts/24h_baseline/baseline_24h_result.json sha 387bd8ede7e42f71a584ea380ef0e22a9f83abf1890d14380d1bc60ee4271286. Fold receipt: receipts/24h_baseline/gate_fold_2026-10-15.json.",
+  "Receipt-completeness defects recorded (F): skipped-on-resume rows missing from per_game baseline section (10/20); budget totals understated; lf52 label from pre-edit bytes. Corrected rev2 + runner fix to follow; numerically no effect on gate verdict.",
+  "Decision path per preregistration: line sealed unless a protocol repair is justified. Diagnosis (2026-10-15): mechanical-defect candidates under examination (ACTION6 coordinate convention / click coverage / repeat-undo behavior; anchor cross-check). Outcome: ONE single-factor protocol repair R1 + re-run, or seal memo.",
+  "No competition data downloaded; anonymous public envs only (arc-agi 0.9.9). No join, no submission, no GPU. Entry deadline conservative 2026-10-26 19:59 CST; join blocked on IDENTITY_GATE user attestation.",
+  "2026-10-15 diagnosis CONCLUDED (F): mechanical convention defect confirmed \u2014 ACTION6 payloads transposed (candidates (row,col) sent as {\"x\": row, \"y\": col}; engine wants {\"x\": col, \"y\": row}). Evidence: receipts/24h_baseline_diagnosis_2026-10-15/ (static probe 2e536dc4, replay probe ac66d079 [100% of sampled sends transposed; lp85 click rate 1.0/step], fix-verify 4eb70b71 [pre-fix intended-pixel hit only 45.5%/33.5%]).",
+  "R1 approved under the preregistration repair clause (single factor): baseline_v2.py 967812a6 -> f6a2bbb2 (one line + comment; diff 0723cdfe); anchors/other logic/split unchanged. R1 gate re-run launched 2026-10-15T10:49:36Z pid 4562 -> receipts/24h_baseline_r1/. R1 decision receipt (58af1eab) supersedes seal draft 5b2d2179 (retained as historical draft). Stop: if R1 baseline <= best anchor or 0 levels => line sealed, no further repairs.",
+  "Receipt rev2 written: receipts/24h_baseline/baseline_24h_result_rev2.json sha cade093c (folded all 60 ledger rows; budget.total_baseline_steps 393000->793000; lf52 done->capped; gate verdict unchanged). Runner --receipts-dir plumbing: f4c574ed. attempt-1 kill log: receipts/24h_baseline_r1/run_attempt1_killed_by_tool_timeout.log."
+ ]
+}

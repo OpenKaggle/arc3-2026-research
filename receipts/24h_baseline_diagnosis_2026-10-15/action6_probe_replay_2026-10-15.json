@@ -1,0 +1,233 @@
+{
+ "date": "2026-10-15",
+ "dynamic": [],
+ "probe": "action6_convention",
+ "replay": [
+  {
+   "action6_count": 15,
+   "action6_rate": 0.0125,
+   "click_pairs": [
+    {
+     "candidate_row_col": [
+      16,
+      12
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      16,
+      12
+     ]
+    },
+    {
+     "candidate_row_col": [
+      16,
+      31
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      16,
+      31
+     ]
+    },
+    {
+     "candidate_row_col": [
+      19,
+      12
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      19,
+      12
+     ]
+    },
+    {
+     "candidate_row_col": [
+      19,
+      31
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      19,
+      31
+     ]
+    },
+    {
+     "candidate_row_col": [
+      12,
+      12
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      12,
+      12
+     ]
+    },
+    {
+     "candidate_row_col": [
+      18,
+      22
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      18,
+      22
+     ]
+    },
+    {
+     "candidate_row_col": [
+      20,
+      12
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      20,
+      12
+     ]
+    },
+    {
+     "candidate_row_col": [
+      16,
+      8
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      16,
+      8
+     ]
+    }
+   ],
+   "game": "sp80",
+   "levels_after": 0,
+   "steps_run": 1200
+  },
+  {
+   "action6_count": 2,
+   "action6_rate": 0.0017,
+   "click_pairs": [
+    {
+     "candidate_row_col": [
+      63,
+      0
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      63,
+      0
+     ]
+    },
+    {
+     "candidate_row_col": [
+      63,
+      0
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      63,
+      0
+     ]
+    }
+   ],
+   "game": "cd82",
+   "levels_after": 0,
+   "steps_run": 1200
+  },
+  {
+   "action6_count": 1200,
+   "action6_rate": 1.0,
+   "click_pairs": [
+    {
+     "candidate_row_col": [
+      17,
+      10
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      17,
+      10
+     ]
+    },
+    {
+     "candidate_row_col": [
+      17,
+      10
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      17,
+      10
+     ]
+    },
+    {
+     "candidate_row_col": [
+      18,
+      10
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      18,
+      10
+     ]
+    },
+    {
+     "candidate_row_col": [
+      17,
+      11
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      17,
+      11
+     ]
+    },
+    {
+     "candidate_row_col": [
+      18,
+      11
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      18,
+      11
+     ]
+    },
+    {
+     "candidate_row_col": [
+      17,
+      16
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      17,
+      16
+     ]
+    },
+    {
+     "candidate_row_col": [
+      18,
+      16
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      18,
+      16
+     ]
+    },
+    {
+     "candidate_row_col": [
+      17,
+      17
+     ],
+     "sent_equals_candidate_xy_order": true,
+     "sent_x_y": [
+      17,
+      17
+     ]
+    }
+   ],
+   "game": "lp85",
+   "levels_after": 1,
+   "steps_run": 1200
+  }
+ ],
+ "static": []
+}

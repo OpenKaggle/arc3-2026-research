@@ -1,0 +1,114 @@
+{
+ "budget": {
+  "approx_cpu_hours": 0.01,
+  "total_baseline_steps": 5000,
+  "wall_s": 46.6
+ },
+ "complete": true,
+ "config": {
+  "max_steps_per_game": 2500,
+  "policies": [
+   "baseline"
+  ],
+  "quick_mode": true
+ },
+ "gate": {
+  "anchor_a_levels_total": 0,
+  "anchor_b_levels_total": 0,
+  "at_least_one_level": false,
+  "baseline_levels_total": 0,
+  "best_anchor_levels_total": 0,
+  "gate_pass": false,
+  "legality_100pct": true,
+  "p99_below_100ms": true,
+  "p99_ms_baseline": 13.75,
+  "peak_rss_mb": 119.5,
+  "rss_below_512": true,
+  "strictly_above_best_anchor": false,
+  "zero_crashes": true
+ },
+ "milestone": "24h_baseline",
+ "notes": [
+  "Sealed 5 game ids were never computed, printed or recorded.",
+  "Trivial anchors are controls only, not submission candidates.",
+  "Stop condition pre-registered: if baseline <= best anchor or 0 levels, 24h gate fails and line is sealed unless a protocol repair is justified."
+ ],
+ "per_game": {
+  "baseline": {
+   "lp85": {
+    "at": "2026-10-15T10:43:55.129028+00:00",
+    "chain_head": "f0ad4601a73d15a0564fee3dd993ab7da03b344c38b28353fa80943467054249",
+    "crash_reason": "",
+    "crashes": 0,
+    "game": "lp85",
+    "illegal": 0,
+    "levels": 0,
+    "pass": 1,
+    "policy": "baseline",
+    "rss_mb": 119.5,
+    "state": "GameState.NOT_FINISHED",
+    "status": "capped",
+    "steps": 2500,
+    "wall_s": 11.94,
+    "win": 8
+   },
+   "sp80": {
+    "at": "2026-10-15T10:44:14.174371+00:00",
+    "chain_head": "5439c218f5d33c7b0f38e966bf39b2a6a0b7e56ec926c299fec1bb0ad997053f",
+    "crash_reason": "",
+    "crashes": 0,
+    "game": "sp80",
+    "illegal": 0,
+    "levels": 0,
+    "pass": 1,
+    "policy": "baseline",
+    "rss_mb": 119.5,
+    "state": "GameState.NOT_FINISHED",
+    "status": "capped",
+    "steps": 2500,
+    "wall_s": 11.13,
+    "win": 6
+   }
+  }
+ },
+ "run_at_utc": "2026-10-15T10:44:14.193210+00:00",
+ "schema_version": 1,
+ "split": {
+  "algorithm": "sha256(salt|full_game_id) sort ascending; first 15 authoring, next 5 validation; sealed never materialized",
+  "authoring": [
+   "tr87-cd924810",
+   "sc25-635fd71a",
+   "su15-1944f8ab",
+   "cn04-2fe56bfb",
+   "r11l-495a7899",
+   "sb26-7fbdac44",
+   "sk48-d8078629",
+   "re86-8af5384d",
+   "ka59-38d34dbb",
+   "g50t-5849a774",
+   "lf52-271a04aa",
+   "bp35-0a0ad940",
+   "sp80-589a99af",
+   "tu93-0768757b",
+   "wa30-ee6fef47"
+  ],
+  "salt": "arc3-cleanroom-split-v1|2026-09-11",
+  "validation": [
+   "vc33-5430563c",
+   "cd82-fb555c5d",
+   "lp85-305b61c3",
+   "tn36-ef4dde99",
+   "ft09-0d8bbf25"
+  ]
+ },
+ "versions": {
+  "anchors_sha256": "25833d28219e205c98ca94c896d816b7d01950115dc8b4a488d47ce62dc00579",
+  "arc_agi": "0.9.9",
+  "baseline_v2_sha256": "f6a2bbb233556da8debea0a8012f2e12573a26ec6524798989a19f9f402e7dfe",
+  "env_manifest_sha256": "891e3a9aadfb9134733a1033f1173edbac3566a7f761a4ade185149f92f9ca85",
+  "framework_head": "4743e7d0aaae0ded0d98a89a7e282e63564cd58b",
+  "python": "3.12.3",
+  "runner_sha256": "f4c574eda6025e74d35bbb22581bddf1fa83045480f65818579cd14ad3711098",
+  "starter_head": "eeb1535404f321d280a8f9194bbc1d7aca5f05fc"
+ }
+}

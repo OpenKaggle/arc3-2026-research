@@ -1,0 +1,244 @@
+{
+ "date": "2026-10-15",
+ "dynamic": [],
+ "probe": "action6_convention",
+ "replay": [],
+ "static": [
+  {
+   "correct_xy_in_valid_clicks": true,
+   "display_to_grid_correct": [
+    3,
+    4
+   ],
+   "display_to_grid_transposed": [
+    4,
+    3
+   ],
+   "frame_at_row_sx_col_sy": 12,
+   "frame_at_row_sy_col_sx": 9,
+   "frame_matches_render": true,
+   "game": "sp80",
+   "levels": 0,
+   "n_clickable_sprites": 1,
+   "n_valid_click_actions": 1,
+   "probe_pixel": {
+    "display_sx_sy": [
+     12,
+     16
+    ],
+    "sprite_py_px": [
+     0,
+     0
+    ],
+    "value": 9
+   },
+   "scale_offsets": [
+    4,
+    0,
+    0
+   ],
+   "sprite0_x_y_w_h": [
+    3,
+    4,
+    5,
+    1
+   ],
+   "sprite_at_correct": {
+    "clickable": true,
+    "x": 3,
+    "y": 4
+   },
+   "sprite_at_transposed": null,
+   "state": "GameState.NOT_FINISHED",
+   "transposed_xy_in_valid_clicks": false
+  },
+  {
+   "frame_matches_render": true,
+   "game": "su15",
+   "levels": 0,
+   "n_clickable_sprites": 0,
+   "n_valid_click_actions": 0,
+   "state": "GameState.NOT_FINISHED"
+  },
+  {
+   "correct_xy_in_valid_clicks": true,
+   "display_to_grid_correct": [
+    3,
+    9
+   ],
+   "display_to_grid_transposed": [
+    9,
+    3
+   ],
+   "frame_at_row_sx_col_sy": 5,
+   "frame_at_row_sy_col_sx": 10,
+   "frame_matches_render": true,
+   "game": "m0r0",
+   "levels": 0,
+   "n_clickable_sprites": 2,
+   "n_valid_click_actions": 2,
+   "probe_pixel": {
+    "display_sx_sy": [
+     19,
+     49
+    ],
+    "sprite_py_px": [
+     0,
+     0
+    ],
+    "value": 10
+   },
+   "scale_offsets": [
+    5,
+    4,
+    4
+   ],
+   "sprite0_x_y_w_h": [
+    3,
+    9,
+    1,
+    1
+   ],
+   "sprite_at_correct": {
+    "clickable": true,
+    "x": 3,
+    "y": 9
+   },
+   "sprite_at_transposed": null,
+   "state": "GameState.NOT_FINISHED",
+   "transposed_xy_in_valid_clicks": false
+  },
+  {
+   "correct_xy_in_valid_clicks": true,
+   "display_to_grid_correct": [
+    6,
+    5
+   ],
+   "display_to_grid_transposed": [
+    5,
+    6
+   ],
+   "frame_at_row_sx_col_sy": 9,
+   "frame_at_row_sy_col_sx": 5,
+   "frame_matches_render": true,
+   "game": "ar25",
+   "levels": 0,
+   "n_clickable_sprites": 1,
+   "n_valid_click_actions": 1,
+   "probe_pixel": {
+    "display_sx_sy": [
+     18,
+     15
+    ],
+    "sprite_py_px": [
+     0,
+     0
+    ],
+    "value": 5
+   },
+   "scale_offsets": [
+    3,
+    0,
+    0
+   ],
+   "sprite0_x_y_w_h": [
+    6,
+    5,
+    3,
+    3
+   ],
+   "sprite_at_correct": {
+    "clickable": true,
+    "x": 6,
+    "y": 5
+   },
+   "sprite_at_transposed": null,
+   "state": "GameState.NOT_FINISHED",
+   "transposed_xy_in_valid_clicks": false
+  },
+  {
+   "frame_matches_render": true,
+   "game": "re86",
+   "levels": 0,
+   "n_clickable_sprites": 0,
+   "n_valid_click_actions": 0,
+   "state": "GameState.NOT_FINISHED"
+  },
+  {
+   "frame_matches_render": true,
+   "game": "tu93",
+   "levels": 0,
+   "n_clickable_sprites": 0,
+   "n_valid_click_actions": 0,
+   "state": "GameState.NOT_FINISHED"
+  },
+  {
+   "frame_matches_render": true,
+   "game": "ls20",
+   "levels": 0,
+   "n_clickable_sprites": 0,
+   "n_valid_click_actions": 0,
+   "state": "GameState.NOT_FINISHED"
+  },
+  {
+   "frame_matches_render": true,
+   "game": "cd82",
+   "levels": 0,
+   "n_clickable_sprites": 0,
+   "n_valid_click_actions": 0,
+   "state": "GameState.NOT_FINISHED"
+  },
+  {
+   "correct_xy_in_valid_clicks": true,
+   "display_to_grid_correct": [
+    2,
+    8
+   ],
+   "display_to_grid_transposed": null,
+   "frame_at_row_sx_col_sy": 3,
+   "frame_at_row_sy_col_sx": 8,
+   "frame_matches_render": true,
+   "game": "lp85",
+   "levels": 0,
+   "n_clickable_sprites": 2,
+   "n_valid_click_actions": 2,
+   "probe_pixel": {
+    "display_sx_sy": [
+     4,
+     29
+    ],
+    "sprite_py_px": [
+     0,
+     1
+    ],
+    "value": 8
+   },
+   "scale_offsets": [
+    2,
+    0,
+    13
+   ],
+   "sprite0_x_y_w_h": [
+    1,
+    8,
+    3,
+    4
+   ],
+   "sprite_at_correct": {
+    "clickable": true,
+    "x": 1,
+    "y": 8
+   },
+   "state": "GameState.NOT_FINISHED",
+   "transposed_xy_in_valid_clicks": false
+  },
+  {
+   "frame_matches_render": true,
+   "game": "ft09",
+   "levels": 0,
+   "n_clickable_sprites": 0,
+   "n_valid_click_actions": 0,
+   "state": "GameState.NOT_FINISHED"
+  }
+ ]
+}

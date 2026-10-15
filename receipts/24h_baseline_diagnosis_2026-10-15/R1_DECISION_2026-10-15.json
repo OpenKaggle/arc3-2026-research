@@ -1,0 +1,86 @@
+{
+ "schema_version": "arc3-r1-decision/1.0",
+ "campaign": "arc-prize-2026-arc-agi-3",
+ "milestone": "24H_BASELINE_GATE_REPAIR_R1",
+ "created_utc": "2026-10-15T10:50:11.249253+00:00",
+ "decision": "SINGLE_FACTOR_PROTOCOL_REPAIR_R1_APPROVED__GATE_RERUN_LAUNCHED",
+ "preregistration_basis": "Stop text: 'if baseline <= best anchor or 0 levels, 24h gate fails and line is sealed unless a protocol repair is justified'. The defect is a mechanical convention bug in the ACTION6 payload path (not a policy-idea weakness), so exactly ONE single-factor repair + re-run under the same protocol is the pre-registered path.",
+ "supersedes_for_current_state": {
+  "artifact": "receipts/24h_baseline/seal_24h_baseline_2026-10-15.json",
+  "artifact_sha256": "5b2d2179d17ad9a5bb618a5c7e97285ec0417e9026ef349f45ea64de4c2e537b",
+  "note": "Seal draft (written 2026-10-15T10:28:09Z, before diagnosis concluded) is retained as a historical draft, NOT overwritten. This R1 decision supersedes it as the current terminal-state record, per the repair clause."
+ },
+ "defect": {
+  "statement": "BaselineAgentV2 sent transposed ACTION6 coordinates: candidates are (row, col)=(y, x) derived from the frame array, but the code unpacked `x, y = t[idx % len(t)]`, sending {\"x\": row, \"y\": col}. The engine convention is {\"x\": col, \"y\": row} (x=column, y=row; (0,0) top-left), so every explainable click landed on the transposed pixel.",
+  "class": "mechanical convention defect; one line; affects 100% of ACTION6 payloads that used explainable candidates",
+  "evidence": {
+   "engine_source_chain": [
+    "arcengine/camera.py `_raw_render`: sprite pixels placed at output[sprite.y+py, sprite.x+px]; `display_to_grid(display_x, display_y) -> (grid_x, grid_y)` with x=column, y=row.",
+    "arcengine/level.py `get_sprite_at`: x>=sprite.x, y>=sprite.y; sprite pixels indexed pixels[y-sprite.y][x-sprite.x].",
+    "arcengine/base_game.py: engine-generated valid ACTION6 clicks use {'x': (sprite.x+px)*scale+x_offset, 'y': (sprite.y+py)*scale+y_offset}; the agent-visible frame is `camera.render()` (frame[row=y][col=x])."
+   ],
+   "live_probe_static": {
+    "file": "action6_probe_static_2026-10-15.json",
+    "sha256": "2e536dc4e769c3c0be44cbfd9e8bb4d01ead220509a3a6c3c15068d42eb8110e",
+    "result": "4/4 click-capable games probed (sp80, m0r0, ar25, lp85): correct {'x': col, 'y': row} is in the engine valid-click set and resolves to the clickable sprite; the transposed payload resolves to None (no sprite)."
+   },
+   "live_probe_replay": {
+    "file": "action6_probe_replay_2026-10-15.json",
+    "sha256": "ac66d079ec1c0935a68abd70f5222c3a26e75fa35376339e1b3ec56c24f48960",
+    "result": "pre-fix baseline deterministic replay: 100% of sampled ACTION6 sends equal (row, col) as (x, y) i.e. transposed; ACTION6 rates: lp85 1.000/step (1200/1200), sp80 0.0125, cd82 0.0017."
+   },
+   "fix_verify": {
+    "file": "r1_fix_verify_2026-10-15.json",
+    "sha256": "4eb70b71917c712d653b52ba5b4e4b9ea7e2c783a5c7be90e2c27eaf2bf2dce6",
+    "result": "post-fix: sent==(col,row) in 22/22 sp80 + 1500/1500 lp85 checks; intended pixel non-background 95.5% / 86.1%; pre-fix payload targeted the intended pixel only 45.5% / 33.5% of the time."
+   },
+   "dynamic_probe": {
+    "file": "action6_probe_dynamic_2026-10-15.json",
+    "sha256": "047dcbe546709e2b66980289bf2e0abe38fb9e302d9b6eed97ab7994309bb6f8",
+    "result": "level-1 click frame effects are inconclusive (cosmetic/no-op for probed sprites); recorded for completeness, not used for the verdict."
+   }
+  }
+ },
+ "single_factor": {
+  "changed": [
+   {
+    "file": "starter/agent/baseline_v2.py",
+    "before_sha256": "967812a624cde82ed4e802ef4383cf982fa0957cb77ab5f82746971aaf0fb8ef",
+    "after_sha256": "f6a2bbb233556da8debea0a8012f2e12573a26ec6524798989a19f9f402e7dfe",
+    "diff": {
+     "file": "artifacts/baseline_v2_R1_diff.patch",
+     "sha256": "0723cdfe7c9eff8cec2c809a9093e3994fe35ef2f928a5170415df8f8306741a"
+    }
+   }
+  ],
+  "unchanged": [
+   "starter/agent/anchors.py (control A never clicks; control B draws x,y i.i.d. uniform - transpose-invariant)",
+   "all other baseline policy logic",
+   "split salt and membership",
+   "protocol parameters (max_steps 40000, per-game cap 1800s)",
+   "rev1 receipt, seal draft and all prior receipts retained"
+  ]
+ },
+ "runner_and_receipt_hygiene": {
+  "note": "Not part of the policy factor; receipt/resource plumbing only.",
+  "items": [
+   "runner hygiene edits found on resume (fold / labels / wall-guard; 060e87ad -> 45680aad, post-failure)",
+   "R1 plumbing: new --receipts-dir isolates R1 outputs (45680aad -> f4c574eda6025e74d35bbb22581bddf1fa83045480f65818579cd14ad3711098)",
+   "rev2 folded receipt: baseline_24h_result_rev2.json sha cade093c16d677116b83716bc44a90bcee92ae6dc5663354c7d0c69dc5d9c813 (fold 60 rows; budget 393000->793000; lf52 done->capped; verdict unchanged)"
+  ]
+ },
+ "rerun": {
+  "receipts_dir": "receipts/24h_baseline_r1/",
+  "pid": 4562,
+  "started_utc": "2026-10-15T10:49:36Z",
+  "command": ".venv/bin/python scripts/run_24h_baseline.py --receipts-dir receipts/24h_baseline_r1",
+  "protocol": "identical to the failed run (20 games = authoring + validation; policies baseline, anchor_a, anchor_b; max_steps 40000; per-game cap 1800s)",
+  "attempt_note": "Attempt 1 (18:46-18:48 CST) was killed by a harness process-group timeout before any progress row; relaunch detached (new session) at 10:49:29Z; attempt-1 log retained as run_attempt1_killed_by_tool_timeout.log."
+ },
+ "stop_conditions": {
+  "on_pass": "If R1 gate_pass=true: proceed to next milestone planning (still local-only; no join; entry/identity gate unchanged).",
+  "on_fail": "If R1 baseline <= best anchor or 0 levels: the line is SEALED; no further protocol repairs without user input."
+ },
+ "not_claimed": "R1 does not guarantee beating the anchor; the re-run decides. Post-fix click quality improvements are measured, not assumed to flow through to levels.",
+ "no_user_action_required": true
+}

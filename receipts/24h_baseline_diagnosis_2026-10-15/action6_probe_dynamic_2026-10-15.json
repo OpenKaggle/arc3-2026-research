@@ -1,0 +1,75 @@
+{
+ "date": "2026-10-15",
+ "dynamic": [
+  {
+   "click_correct_xy": [
+    12,
+    16
+   ],
+   "click_transposed_xy": [
+    16,
+    12
+   ],
+   "correct_click_frame_diff": 2,
+   "correct_click_levels_after": 0,
+   "game": "sp80",
+   "repeat_correct_click_diffs": [
+    2,
+    2,
+    2
+   ],
+   "repeat_correct_click_levels": 0,
+   "transposed_click_frame_diff": 2,
+   "transposed_click_levels_after": 0
+  },
+  {
+   "game": "su15",
+   "note": "no clickable sprites at initial state"
+  },
+  {
+   "click_correct_xy": [
+    19,
+    49
+   ],
+   "click_transposed_xy": [
+    49,
+    19
+   ],
+   "correct_click_frame_diff": 0,
+   "correct_click_levels_after": 0,
+   "game": "m0r0",
+   "repeat_correct_click_diffs": [
+    0,
+    2,
+    0
+   ],
+   "repeat_correct_click_levels": 0,
+   "transposed_click_frame_diff": 0,
+   "transposed_click_levels_after": 0
+  },
+  {
+   "click_correct_xy": [
+    18,
+    15
+   ],
+   "click_transposed_xy": [
+    15,
+    18
+   ],
+   "correct_click_frame_diff": 0,
+   "correct_click_levels_after": 0,
+   "game": "ar25",
+   "repeat_correct_click_diffs": [
+    0,
+    0,
+    0
+   ],
+   "repeat_correct_click_levels": 0,
+   "transposed_click_frame_diff": 0,
+   "transposed_click_levels_after": 0
+  }
+ ],
+ "probe": "action6_convention",
+ "replay": [],
+ "static": []
+}

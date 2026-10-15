@@ -1,0 +1,73 @@
+{
+ "schema_version": "arc3-seal/1.0",
+ "campaign": "arc-prize-2026-arc-agi-3",
+ "milestone": "24H_BASELINE_POLICY_LOCAL_ONLY",
+ "sealed_at_utc": "2026-10-15T10:28:09Z",
+ "verdict": "SEALED_GATE_FAILED",
+ "gate": {
+  "anchor_a_levels_total": 0,
+  "anchor_b_levels_total": 8,
+  "at_least_one_level": true,
+  "baseline_levels_total": 3,
+  "best_anchor_levels_total": 8,
+  "gate_pass": false,
+  "legality_100pct": true,
+  "p99_below_100ms": true,
+  "p99_ms_baseline": 4.42,
+  "peak_rss_mb": 134.2,
+  "rss_below_512": true,
+  "strictly_above_best_anchor": false,
+  "zero_crashes": true
+ },
+ "policy_totals": {
+  "anchor_a": 0,
+  "anchor_b": 8,
+  "baseline": 3
+ },
+ "games_with_levels": {
+  "anchor_a": {},
+  "anchor_b": {
+   "cd82": 1,
+   "cn04": 1,
+   "ft09": 1,
+   "lp85": 2,
+   "r11l": 1,
+   "sk48": 1,
+   "sp80": 1
+  },
+  "baseline": {
+   "cd82": 1,
+   "lp85": 1,
+   "sp80": 1
+  }
+ },
+ "budget": {
+  "approx_cpu_hours": 4.65,
+  "total_baseline_steps": 393000,
+  "wall_s": 16737.5
+ },
+ "run_at_utc": "2026-10-15T01:08:41.044204+00:00",
+ "result_artifact": {
+  "path": "receipts/24h_baseline/baseline_24h_result.json",
+  "sha256": "387bd8ede7e42f71a584ea380ef0e22a9f83abf1890d14380d1bc60ee4271286"
+ },
+ "decision": "Pre-registered gate requires the baseline to be strictly above the best trivial anchor; baseline=3 total levels vs best anchor (anchor_b)=8 -> gate_pass=false. No join package produced; ARC-AGI-3 local line sealed. Joining remains a user-only decision (identity attestation); conservative entry deadline 2026-10-26 19:59 CST.",
+ "evidence": {
+  "facts": [
+   "complete=true; legality 100%; 0 crashes; p99 4.42ms<100ms; peak RSS 134.2MB<512MiB",
+   "at_least_one_level=true (baseline completed 3 levels total)",
+   "strictly_above_best_anchor=false (anchor_b 8 levels)",
+   "gate_pass=false"
+  ],
+  "interpretation": [
+   "Model-free DFS+undo baseline is legal/stable but does not beat the stability anchor; no basis for a join/submission package under the pre-registered gate"
+  ],
+  "unknowns": [
+   "Whether a stronger local policy could beat the anchor within remaining time; out of scope for this sealed milestone"
+  ]
+ },
+ "next_actions": [
+  "AUDIT_STATE.stage advanced to 24H_BASELINE_SEALED_GATE_FAILED",
+  "No further compute on this line; keep assets for archive"
+ ]
+}

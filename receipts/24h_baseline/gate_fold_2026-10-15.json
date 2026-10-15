@@ -1,0 +1,48 @@
+{
+ "created_utc": "2026-10-15T10:31:45.375748+00:00",
+ "defect_impact": "none on the gate verdict (missing rows are level-0 for baseline; anchors complete 20/20)",
+ "gate_facts": {
+  "anchor_a_levels_total": 0,
+  "anchor_b_levels_total": 8,
+  "baseline_levels_total": 3,
+  "best_anchor_levels_total": 8,
+  "legality_100pct": true,
+  "level_games": {
+   "anchor_b": [
+    "cn04",
+    "r11l",
+    "sk48",
+    "sp80",
+    "cd82",
+    "lp85(x2)",
+    "ft09"
+   ],
+   "baseline": [
+    "sp80",
+    "cd82",
+    "lp85"
+   ]
+  },
+  "p99_ms_baseline": 4.42,
+  "result_sha256": "387bd8ede7e42f71a584ea380ef0e22a9f83abf1890d14380d1bc60ee4271286",
+  "rss_below_512": true,
+  "strictly_above_best_anchor": false,
+  "zero_crashes": true
+ },
+ "gate_result": "FAILED_AS_PREREGISTERED",
+ "milestone": "24h_baseline",
+ "no_user_action_required": true,
+ "protocol_next_step": "Pre-registered stop text: 'if baseline <= best anchor or 0 levels, 24h gate fails and line is sealed unless a protocol repair is justified'. Diagnosis initiated 2026-10-15: verify mechanical-defect candidates (ACTION6 coordinate convention, click coverage, repeat/undo behavior) before deciding: ONE single-factor protocol repair (R1) vs SEAL.",
+ "receipt_defects_found": [
+  "F: resume skip-branch does not restore skipped rows -> per_game.baseline contains only the 10 re-run games (all level-0 games missing from receipt; gate totals numerically unaffected)",
+  "F: budget.total_baseline_steps=393000 covers only the 10 re-run games (true file-wide baseline steps ~793000)",
+  "F: lf52 baseline row status label 'done' inconsistent with on-disk runner bytes (pre-edit label; content fields unaffected); wall-cap hit at 33000 steps / 13938.54s"
+ ],
+ "receipt_type": "arc3_24h_gate_fold",
+ "run_lineage": [
+  "run#1 start 19:28:47Z pid37198, crashed 19:56:15Z on lf52 IndexError (10 baseline rows written)",
+  "run#2 start 20:08:58Z pid74888 (killed ~10min, no rows)",
+  "run#3 start 20:19:25Z (killed ~10min, no rows)",
+  "run#4 start 20:29:43Z pid93045, completed 50 rows (10 baseline re-runs + all 40 anchor rows), receipt 01:08:41Z"
+ ]
+}

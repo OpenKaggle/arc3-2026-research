@@ -1,0 +1,143 @@
+{
+ "schema": "arc3-24h-seal/1.0",
+ "campaign": "arc-prize-2026-arc-agi-3",
+ "milestone": "24h_baseline_r1",
+ "sealed_at_utc": "2026-10-15T12:32:37.898842+00:00",
+ "verdict": "SEALED_GATE_FAILED_AS_PREREGISTERED",
+ "reason": "R1 baseline 4 levels <= best anchor 8 levels (anchor_b uniform-random control); strictly_above_best_anchor=false; repair insufficient -> seal per stop text.",
+ "stop_text": "if baseline <= best anchor or 0 levels, 24h gate fails and line is sealed unless a protocol repair is justified.",
+ "gate_facts": {
+  "anchor_a_levels_total": 0,
+  "anchor_b_levels_total": 8,
+  "at_least_one_level": true,
+  "baseline_levels_total": 4,
+  "best_anchor_levels_total": 8,
+  "gate_pass": false,
+  "legality_100pct": true,
+  "p99_below_100ms": true,
+  "p99_ms_baseline": 12.81,
+  "peak_rss_mb": 159.1,
+  "rss_below_512": true,
+  "strictly_above_best_anchor": false,
+  "zero_crashes": true
+ },
+ "per_game_levels": {
+  "baseline": {
+   "bp35": 0,
+   "cd82": 1,
+   "cn04": 0,
+   "ft09": 0,
+   "g50t": 0,
+   "ka59": 0,
+   "lf52": 0,
+   "lp85": 1,
+   "r11l": 1,
+   "re86": 0,
+   "sb26": 0,
+   "sc25": 0,
+   "sk48": 0,
+   "sp80": 1,
+   "su15": 0,
+   "tn36": 0,
+   "tr87": 0,
+   "tu93": 0,
+   "vc33": 0,
+   "wa30": 0
+  },
+  "anchor_a": {
+   "bp35": 0,
+   "cd82": 0,
+   "cn04": 0,
+   "ft09": 0,
+   "g50t": 0,
+   "ka59": 0,
+   "lf52": 0,
+   "lp85": 0,
+   "r11l": 0,
+   "re86": 0,
+   "sb26": 0,
+   "sc25": 0,
+   "sk48": 0,
+   "sp80": 0,
+   "su15": 0,
+   "tn36": 0,
+   "tr87": 0,
+   "tu93": 0,
+   "vc33": 0,
+   "wa30": 0
+  },
+  "anchor_b": {
+   "bp35": 0,
+   "cd82": 1,
+   "cn04": 1,
+   "ft09": 1,
+   "g50t": 0,
+   "ka59": 0,
+   "lf52": 0,
+   "lp85": 2,
+   "r11l": 1,
+   "re86": 0,
+   "sb26": 0,
+   "sc25": 0,
+   "sk48": 1,
+   "sp80": 1,
+   "su15": 0,
+   "tn36": 0,
+   "tr87": 0,
+   "tu93": 0,
+   "vc33": 0,
+   "wa30": 0
+  }
+ },
+ "repair_history": {
+  "R0_pre_fix": "baseline 3 vs anchor_b 8 => FAILED (receipts/24h_baseline/, rev2 sha cade093c)",
+  "R1_fix": "single factor: ACTION6 coordinate convention (baseline_v2 967812a6 -> f6a2bbb2, diff 0723cdfe); R1 baseline 3->4 (r11l added; sp80/cd82/lp85 kept) but still <= anchor 8; no further repairs (stop text)"
+ },
+ "evidence": {
+  "folded": {
+   "file": "receipts/24h_baseline_r1/baseline_24h_result_folded.json",
+   "sha256": "b19e9432cc43ccf8330b701db7e96559b870359c5844975cfd7cc1931c8e249a"
+  },
+  "gate_fold": {
+   "file": "receipts/24h_baseline_r1/gate_fold_20261015T123234Z.json",
+   "sha256": "c4ee8e3c1a12c6dcbca882bfa520cd0e2a4379b5ac8fd3bcdd8f0156ecafd60f"
+  },
+  "result": {
+   "file": "receipts/24h_baseline_r1/baseline_24h_result.json",
+   "sha256": "0f97c0cd10bbf8f9043d9ab53c74e8de2de7a0958e66693ae8e745852d3e621e"
+  },
+  "progress": {
+   "file": "receipts/24h_baseline_r1/progress.jsonl",
+   "sha256": "91a11972ab9b0c0c009b2fc4f302b3565e505a8de0c8e1fa9ab8dbd8113c8ac6"
+  },
+  "reconciliation_memo": {
+   "file": "receipts/24h_baseline/RECEIPT_RECONCILIATION_2026-10-15.md",
+   "sha256": "bb73aa03030bab42947abd879beb5a59b118c7eb722392eb8638d9843b6ae809"
+  },
+  "fold_tool": {
+   "file": "starter/scripts/fold_24h_receipt.py",
+   "sha256": "9b042afd1603930eb02fd3362f0160512e415c08b7b6ab9de09947f542fc0853"
+  },
+  "gate_fold_twin": {
+   "file": "receipts/24h_baseline_r1/gate_fold_20261015T123136Z.json",
+   "sha256": "17665b30a68596af21838957ecb2784020533cc87af9ef19f09013501de56cbd"
+  }
+ },
+ "disposition": {
+  "line": "SEALED - no further protocol repairs, no further 24h attempts; all evidence retained",
+  "machines_paused_at_seal": [
+   "fdc77cc5-b71d-4ee9-a6d0-38a110bd6c6b (R1 keepalive)",
+   "d7e900fd-7705-436f-8015-a59bbee2ea62 (R1 fold/state guard)",
+   "c156da48-2a3f-4865-b84b-9ae6010006f2 (R1 fold wake)"
+  ],
+  "kaggle": "no join, no submission, no GPU (unchanged); entry deadline 2026-10-26 23:59 UTC; decision remains the user's (queue #1) - local evidence does not support competitive value",
+  "deliverable": "this seal receipt + folded/gate receipts; no submission package produced"
+ },
+ "notes": [
+  "Integrity green: 100% legal, 0 crashes, p99 12.81ms, RSS below 512MiB.",
+  "R1 improvement is real (3->4) but insufficient vs control anchors; anchors adjudicate, not narrative.",
+  "R1 receipt hygiene: isolated receipts dir; fold is idempotent - a parallel repair thread re-ran it once (12:32:34). Both gate_fold twins are retained; this receipt's evidence pointers reference the post-race files (folded b19e9432..., gate_fold c4ee8e3c...; twin 17665b30...). Reconciliation memo covers R0 duplicates.",
+  "Machines fdc77cc5/d7e900fd/c156da48 paused by the seal workstream (2026-10-15 ~12:35Z)."
+ ],
+ "regenerated_utc": "2026-10-15T12:33:40.330933+00:00"
+}

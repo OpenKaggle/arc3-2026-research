@@ -1,0 +1,20 @@
+{
+ "campaign": "arc-prize-2026-arc-agi-3",
+ "schema_version": "1.0",
+ "snapshot_utc": "2026-10-14T19:02:46Z",
+ "stage": "PRE_JOIN_SMOKE_PASSED",
+ "kaggle_joined": false,
+ "competition_data_downloaded": false,
+ "private_evaluation_opened": false,
+ "submission_made": false,
+ "gpu_used": false,
+ "legacy_assets_mounted": false,
+ "license_grant_authorized": false,
+ "next_authorized_action": "BUILD_24H_BASELINE_POLICY_LOCAL_ONLY",
+ "notes": [
+  "2026-10-15: 6h milestone smoke PASSED. 25 public games x 400 steps x 2 passes: 0 illegal actions, 0 crashes, deterministic replay (identical trajectory SHA), 133.6s, 185MB RSS.",
+  "No competition data downloaded; public envs via arc-agi 0.9.9 anonymous API only. No join, no submission, no GPU.",
+  "Next authorized local action: 24h milestone baseline policy (model-free state machine) paired vs trivial anchors; requires >=1 completed level above best trivial anchor.",
+  "Join remains blocked on IDENTITY_GATE (user attestation). Entry deadline conservative 2026-10-26 19:59 CST."
+ ]
+}

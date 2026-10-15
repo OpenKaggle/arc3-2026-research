@@ -1,0 +1,10 @@
+[run_24h] start 2026-10-15T10:46:18.101108+00:00
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-15 18:46:19 | INFO | Got anonymous API key: 78af0ce6-e41f-418a-beba-222a28c4f592
+2026-10-15 18:46:19 | INFO | You can register for an API key at https://three.arcprize.org
+2026-10-15 18:46:20 | INFO | Successfully fetched 25 environment(s) from API
+[run_24h] split: authoring=['tr87', 'sc25', 'su15', 'cn04', 'r11l', 'sb26', 'sk48', 're86', 'ka59', 'g50t', 'lf52', 'bp35', 'sp80', 'tu93', 'wa30']
+[run_24h] split: validation=['vc33', 'cd82', 'lp85', 'tn36', 'ft09']
+2026-10-15 18:46:20 | INFO | Created new scorecard: 9ad739e0-642c-4187-af36-06df56d6ef8d
+2026-10-15 18:46:21 | INFO | Successfully fetched metadata for game tr87
+2026-10-15 18:46:21 | INFO | Successfully loaded game class Tr87 from environment_files/tr87/cd924810/tr87.py

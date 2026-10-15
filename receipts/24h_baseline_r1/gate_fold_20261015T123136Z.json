@@ -1,0 +1,39 @@
+{
+ "campaign": "arc-prize-2026-arc-agi-3",
+ "created_utc": "2026-10-15T12:31:36.210357+00:00",
+ "gate_facts": {
+  "anchor_a_levels_total": 0,
+  "anchor_b_levels_total": 8,
+  "baseline_levels_total": 4,
+  "best_anchor_levels_total": 8,
+  "legality_100pct": true,
+  "level_games": {
+   "anchor_a": [],
+   "anchor_b": [
+    "cd82",
+    "cn04",
+    "ft09",
+    "lp85",
+    "r11l",
+    "sk48",
+    "sp80"
+   ],
+   "baseline": [
+    "cd82",
+    "lp85",
+    "r11l",
+    "sp80"
+   ]
+  },
+  "p99_ms_baseline": 12.81,
+  "rss_below_512": true,
+  "strictly_above_best_anchor": false,
+  "zero_crashes": true
+ },
+ "gate_result": "FAILED_AS_PREREGISTERED",
+ "label": "r1",
+ "no_user_action_required": true,
+ "operator_next_step_suggestion": "R1 gate FAILED: per stop text the line is SEALED (no further protocol repairs).",
+ "progress_rows": 60,
+ "schema_version": "arc3-24h-gate-fold/1.0"
+}

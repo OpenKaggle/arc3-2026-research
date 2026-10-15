@@ -1,0 +1,221 @@
+{
+ "baseline_v2_sha256_note": "f6a2bbb233556da8debea0a8012f2e12573a26ec6524798989a19f9f402e7dfe",
+ "date": "2026-10-15",
+ "games": [
+  {
+   "all_sent_are_cand_col_row": true,
+   "game": "sp80",
+   "intended_non_bg_rate": 0.9545454545454546,
+   "n_clicks_checked": 22,
+   "pre_fix_target_non_bg_rate": 0.5454545454545454,
+   "pre_fix_target_same_as_intended_rate": 0.45454545454545453,
+   "sample_checks": [
+    {
+     "candidate_row_col": [
+      16,
+      12
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 9,
+     "pre_fix_payload_target_is_non_bg": false,
+     "pre_fix_payload_target_value": 12,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      12,
+      16
+     ],
+     "step": 186
+    },
+    {
+     "candidate_row_col": [
+      16,
+      31
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 9,
+     "pre_fix_payload_target_is_non_bg": false,
+     "pre_fix_payload_target_value": 12,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      31,
+      16
+     ],
+     "step": 372
+    },
+    {
+     "candidate_row_col": [
+      19,
+      12
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 9,
+     "pre_fix_payload_target_is_non_bg": false,
+     "pre_fix_payload_target_value": 12,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      12,
+      19
+     ],
+     "step": 558
+    },
+    {
+     "candidate_row_col": [
+      19,
+      31
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 9,
+     "pre_fix_payload_target_is_non_bg": false,
+     "pre_fix_payload_target_value": 12,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      31,
+      19
+     ],
+     "step": 744
+    },
+    {
+     "candidate_row_col": [
+      12,
+      12
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 9,
+     "pre_fix_payload_target_is_non_bg": true,
+     "pre_fix_payload_target_value": 9,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      12,
+      12
+     ],
+     "step": 776
+    },
+    {
+     "candidate_row_col": [
+      18,
+      22
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 9,
+     "pre_fix_payload_target_is_non_bg": false,
+     "pre_fix_payload_target_value": 12,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      22,
+      18
+     ],
+     "step": 930
+    }
+   ],
+   "steps_run": 1500
+  },
+  {
+   "all_sent_are_cand_col_row": true,
+   "game": "lp85",
+   "intended_non_bg_rate": 0.8606666666666667,
+   "n_clicks_checked": 1500,
+   "pre_fix_target_non_bg_rate": 0.54,
+   "pre_fix_target_same_as_intended_rate": 0.3353333333333333,
+   "sample_checks": [
+    {
+     "candidate_row_col": [
+      17,
+      10
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 11,
+     "pre_fix_payload_target_is_non_bg": true,
+     "pre_fix_payload_target_value": 3,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      10,
+      17
+     ],
+     "step": 0
+    },
+    {
+     "candidate_row_col": [
+      17,
+      10
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 11,
+     "pre_fix_payload_target_is_non_bg": true,
+     "pre_fix_payload_target_value": 3,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      10,
+      17
+     ],
+     "step": 1
+    },
+    {
+     "candidate_row_col": [
+      18,
+      10
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 11,
+     "pre_fix_payload_target_is_non_bg": true,
+     "pre_fix_payload_target_value": 3,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      10,
+      18
+     ],
+     "step": 2
+    },
+    {
+     "candidate_row_col": [
+      17,
+      11
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 11,
+     "pre_fix_payload_target_is_non_bg": true,
+     "pre_fix_payload_target_value": 3,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      11,
+      17
+     ],
+     "step": 3
+    },
+    {
+     "candidate_row_col": [
+      18,
+      11
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 11,
+     "pre_fix_payload_target_is_non_bg": true,
+     "pre_fix_payload_target_value": 3,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      11,
+      18
+     ],
+     "step": 4
+    },
+    {
+     "candidate_row_col": [
+      17,
+      16
+     ],
+     "intended_pixel_is_non_bg": true,
+     "intended_pixel_value": 11,
+     "pre_fix_payload_target_is_non_bg": false,
+     "pre_fix_payload_target_value": 4,
+     "sent_is_cand_col_row": true,
+     "sent_x_y": [
+      16,
+      17
+     ],
+     "step": 5
+    }
+   ],
+   "steps_run": 1500
+  }
+ ],
+ "probe": "r1_fix_verify"
+}

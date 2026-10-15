@@ -1,0 +1,86 @@
+{
+ "created_at_cst": "2026-10-15 18:34 CST",
+ "created_at_utc": "2026-10-15T10:34:22Z",
+ "created_by": "keepalive repair thread (machine fdc77cc5, \u7ec8\u6781\u673a\u5668 \u00b7 ARC3 24h \u57fa\u7ebf\u4fdd\u6d3b)",
+ "distinctions": {
+  "facts": [
+   "run completed with 60/60 rows, 0 illegal, 0 crashes",
+   "full-ledger gate: baseline 3 levels vs best anchor 8 -> gate_pass=false (unchanged by receipt coverage defects)",
+   "v1 receipt untouched (sha 387bd8ed...); rev2 regenerated with the fixed writer (sha 660f014d...)",
+   "repaired runner sha 45680aad...; baseline_v2 sha 967812a6..."
+  ],
+  "interpretation": [
+   "substring false-pass did delay the archive wake, but the parallel workstream performed the fold before any decision impact",
+   "deterministic candidate cycling is compatible with the protocol's 'explainable candidates only' rule and upstream framework practice"
+  ],
+  "unknowns": [
+   "exact multi-session edit chronology of the runner during the repair window",
+   "true campaign wall/CPU totals including run1 and the sleep gap are not reconstructable exactly",
+   "whether the workstream will adopt rev2 as-is or regenerate under its own naming"
+  ]
+ },
+ "findings_not_yet_actioned": {
+  "archive_sentinel_substring_false_pass": {
+   "detail": "predicate grep -q '24H_BASELINE' also matches the pre-existing 'BUILD_24H_BASELINE_POLICY_LOCAL_ONLY', so the 'not advanced' alarm was suppressed from the start (the fold was eventually done 18:31 CST by the parallel workstream, not via this wake). Post-fold the machine is silent either way.",
+   "machine_id": "d7e900fd-7705-436f-8015-a59bbee2ea62",
+   "suggested_patch": "r=.../baseline_24h_result.json; a=.../AUDIT_STATE.json; [ -f \"$r\" ] || exit 0; grep -q '\"complete\": true' \"$r\" || exit 0; python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if (d.get(\"stage\") != \"PRE_JOIN_SMOKE_PASSED\" or d.get(\"next_authorized_action\") != \"BUILD_24H_BASELINE_POLICY_LOCAL_ONLY\") else 1)' \"$a\" && exit 0; echo \"24h result complete but AUDIT_STATE not advanced\"; exit 1",
+   "why_left_unedited": "avoid mid-flight conflicts with the active diagnosis/archive workstream; applies when machines are re-armed."
+  },
+  "rerun_masking_hazard": "For the planned single-factor repair rerun (R1): keepalive fdc77cc5 and archive d7e900fd predicates reference the CURRENT receipt/stage. If old artifacts stay in place during a rerun, failures can be masked (old complete:true receipt) and the next fold wake suppressed. Re-arm/rename artifacts when the rerun starts.",
+  "sleep_wall_semantics": "per-game wall cap is inflated by machine sleep (lf52: 33000 steps at wall 13938.54s). For future long harnesses: run under caffeinate -i -s with AC power; consider CPU-time (process_time) budget guards; keep wall for reporting."
+ },
+ "incident_id": "lf52_indexerror_2026-10-15",
+ "open_items": [
+  "R1-or-seal decision remains with the diagnosis workstream; this closure confirms all repair-side artifacts are consistent for that decision.",
+  "Apply the archive-sentinel patch / re-arm machine predicates when the workstream prepares the next run.",
+  "rev2 adoption decision (annotate or supersede) is left to the archival/diagnosis workstream."
+ ],
+ "receipt_type": "arc3_24h_baseline_incident_closure",
+ "repairs_in_effect": {
+  "baseline_v2_modulo": {
+   "change": "ACTION6 target selection cycles deterministically (t[idx % len(t)]) so guard-skipping paths (known-good / fallback) can never index past the candidate list",
+   "evidence": [
+    "ft09 probe 4000 clicks / 1003 targets (see incident file determinism_probe)",
+    "full run: 0 crashes; baseline steps 793000 across 20 games; 0 illegal actions"
+   ],
+   "file": "starter/agent/baseline_v2.py",
+   "sha256": "967812a624cde82ed4e802ef4383cf982fa0957cb77ab5f82746971aaf0fb8ef"
+  },
+  "receipt_rev2": {
+   "change": "per_game 20/20/20 (was 10/20 baseline); budget.total_baseline_steps 393000 -> 793000; p99/RSS retained from v1 (final-session subset, not recoverable per row) with note; v1 bytes preserved",
+   "path": "receipts/24h_baseline/baseline_24h_result_rev2.json",
+   "sha256": "660f014d0fd23b42ae33e5fe6e87fc9b934421024c368b64bd42adf4c8a903aa",
+   "stamped_copy": "receipts/24h_baseline/baseline_24h_result_rev2_20261015T103353Z.json",
+   "v1_sha256": "387bd8ede7e42f71a584ea380ef0e22a9f83abf1890d14380d1bc60ee4271286"
+  },
+  "runner_choose_action_guard": {
+   "change": "policy.choose_action exceptions recorded as crash rows (crashes+=1, crash_reason) and break the game, instead of killing the 24h process (see incident file repair_runner; verified present)",
+   "file": "starter/scripts/run_24h_baseline.py"
+  },
+  "runner_resume_fold_fix": {
+   "change": "load_ledger()/fold_completed(): last ledger row per (policy, game) folded into the receipt table; receipt gains a note when folded > 0",
+   "sha256_after": "45680aad702406914bae3afbd493b7b10d991560338591b0d2bf093140ad837b",
+   "sha256_before": "060e87ad3d6358ae36a2c9e4df63c915fc2a4ee897d755f2b8f51ae9e8846adb",
+   "test": "dry receipt build: per_game 20/20/20; baseline steps 793000; gate verdict unchanged"
+  },
+  "runner_wall_cap_label": {
+   "change": "wall-cap breaks now labelled 'capped' (was 'done') for future rows"
+  }
+ },
+ "research_refs": [
+  "https://docs.arcprize.org/actions \u2014 ACTION6 needs x,y in 0..63; active coordinates are not disclosed to agents",
+  "vendored ARC-AGI-3-Agents (github.com/arcprize/ARC-AGI-3-Agents) \u2014 templates use explicit GameAction data; our explainable-candidate cycling stays within protocol bounds",
+  "swarm-ai-research ARC-AGI-3 lessons (blog + research notes, 2026) \u2014 recording-driven analysis; deterministic local harness lessons",
+  "Qiita '\u81ea\u5df1\u56de\u5fa9\u578b launchd \u30b8\u30e7\u30d6' (multi-slot + done-marker pattern) \u2014 macOS sleep/kill survival: retries + done markers + caffeinate -i -s",
+  "docs.arcprize.org rate limiting \u2014 retry/backoff is expected; long runs must tolerate interruption"
+ ],
+ "status": "CLOSED \u2014 crash repaired, run completed, keepalive auto-verified, receipt corrections applied",
+ "timeline_facts": {
+  "machine_autoverify": "fdc77cc5 last_exit=0 (complete-receipt path); command re-verified verbatim: exit=0",
+  "run1": "2026-10-15 03:28:47 CST pid37198; crashed 03:56:15 CST on lf52 IndexError (baseline_v2.py:423); 10 baseline rows in ledger",
+  "run2_run3": "04:09 / 04:19 CST relaunch attempts killed within ~10 min (no rows)",
+  "run4": "04:29:43 CST pid93045 \u2014 resumed (skip done), completed all 50 remaining rows; receipt written 09:08:41 CST",
+  "sleep_window": "~04:52\u201308:2x CST worker offline (Mac sleep) froze run4; on wake the run resumed; lf52 hit the per-game wall cap at 33000 steps (wall_s 13938.54 inflated by the sleep)"
+ },
+ "verdict": "REPAIRED; RUN COMPLETED; CLOSED WITH NOTED COORDINATION ITEMS"
+}

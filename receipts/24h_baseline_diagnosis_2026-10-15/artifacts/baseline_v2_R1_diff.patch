@@ -1,0 +1,14 @@
+--- ../probes/baseline_v2_pre_R1_967812a6.py	2026-10-15 18:42:28
++++ agent/baseline_v2.py	2026-10-15 18:42:35
+@@ -425,7 +425,10 @@
+                 # valid even when chosen via the known-good path (which skips
+                 # the _target_available guard) after _target_idx has advanced
+                 # past the end of the list.
+-                x, y = t[idx % len(t)]
++                # Candidates are (row, col)=(y, x) derived from the frame array; the
++                # engine ACTION6 payload is {"x": col, "y": row} (x=column, y=row,
++                # (0,0) top-left; see docs/actions.md and engine display_to_grid).
++                y, x = t[idx % len(t)]
+             else:
+                 x, y = (min(31, 63), min(31, 63))
+             action = GameAction.ACTION6

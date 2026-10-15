@@ -123,3 +123,22 @@ returned frame and metadata, available-action hash, chosen action/coordinates,
 response hash, terminal state, cumulative wall time, and prior-step hash.
 Hidden evaluation stores only permitted aggregate observations and artifact
 hashes, never raw frames or inferred answers.
+
+---
+
+## Addendum A1 (2026-10-15): R1 protocol repair — ACTION6 payload convention
+
+- **Defect (F)**: BaselineAgentV2 sent transposed ACTION6 payloads. Candidates are
+  (row, col)=(y, x) from the frame array; code unpacked `x, y = t[…]` and sent
+  `{"x": row, "y": col}`. Engine convention: `{"x": col, "y": row}` (x=column, y=row;
+  (0,0) top-left). Evidence: `receipts/24h_baseline_diagnosis_2026-10-15/`
+  (static probe `2e536dc4…`, replay probe `ac66d079…`, fix-verify `4eb70b71…`,
+  R1 decision `58af1eab…`).
+- **Repair (single factor)**: `starter/agent/baseline_v2.py` `967812a6… → f6a2bbb2…`
+  (one line + comment; diff `0723cdfe…`). Nothing else in the policy changed.
+- **Re-run**: identical protocol; outputs in `receipts/24h_baseline_r1/`; runner
+  `f4c574ed…` (adds `--receipts-dir` only).
+- **Receipt hygiene**: rev2 folded receipt `cade093c…` (verdict unchanged); seal draft
+  `5b2d2179…` retained but superseded for current state.
+- **Stop text**: if the R1 re-run's baseline ≤ best anchor or 0 levels, the line is
+  sealed and no further repairs are made without user input.

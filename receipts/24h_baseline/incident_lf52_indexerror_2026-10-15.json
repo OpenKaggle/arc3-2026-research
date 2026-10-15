@@ -1,0 +1,31 @@
+{
+  "receipt_type": "arc3_24h_baseline_incident_repair",
+  "incident_id": "lf52_indexerror_2026-10-15",
+  "created_at_cst": "2026-10-15 04:20",
+  "timeline": {
+    "launch": "2026-10-15 03:28 CST pid 37198 (system python, --max-steps 40000 --wall-cap-hours 12)",
+    "crash": "2026-10-15 03:56 CST on game lf52 (game #11 of baseline pass 0), IndexError in baseline_v2.py:423",
+    "detected": "keepalive machine fdc77cc5 (900s) + main controller session",
+    "repair_policy": "2026-10-15 04:08 CST (repair thread): modulo target fallback in ACTION6 block",
+    "repair_runner": "2026-10-15 04:09 CST (main controller): wrap policy.choose_action exceptions so a policy crash fails the game row instead of killing the 24h process",
+    "relaunch": "2026-10-15 04:09 CST pid 74888 (starter .venv python, defaults: --max-steps 40000 --wall-cap-hours 20.0); 10 done rows skipped, lf52 rerun",
+    "determinism_probe": "2026-10-15 04:11-04:16 CST: standalone probe (no ledger writes) on lf52 + ft09, 2 fresh-env passes x 4000 steps each; identical trajectories, 0 crashes; ft09 = 4000 ACTION6 clicks over 1003 unique targets (modulo path exercised)"
+  },
+  "root_cause": {
+    "F": "fallback branch 'min(legal, key=count)' can select ACTION6 without the _target_available guard; on pure-click games (legal=[6]) the per-state target index exceeds len(tier0/combined targets) and the old code indexed t[idx] directly -> IndexError",
+    "I": "known_good branch may also select ACTION6 unguarded (repair comment); modulo fallback covers both",
+    "U": "exact pre-patch bytes of baseline_v2.py not archived in git (file untracked); reconstructed from traceback line and current file"
+  },
+  "hashes": {
+    "baseline_v2_crashed_reconstructed_sha256": "190a8101337a4a80b7e7e644ce273975ae2082ba558c1d2fe732d58ccc6de362",
+    "baseline_v2_patched_sha256": "967812a624cde82ed4e802ef4383cf982fa0957cb77ab5f82746971aaf0fb8ef",
+    "run_24h_baseline_patched_sha256": "3f1dd5b59727ce685564a2a7d97fd9224dcc0c96ae4be67ea96f034bee2e4f01"
+  },
+  "repair_diff_policy": {
+    "before": "x, y = t[idx] if t else (min(31, 63), min(31, 63))",
+    "after": "if t: x, y = t[idx % len(t)]  else: x, y = (min(31, 63), min(31, 63))  (with deterministic-cycle comment)"
+  },
+  "repair_diff_runner": "policy.choose_action wrapped in try/except that increments crashes, records crash_reason, breaks (mirrors existing env.step guard)",
+  "gate_impact": "none to completed rows (10 rows retained); lf52 rerun from scratch; expected total wall ~4h, far below either 12h or 20h cap; determinism re-verified",
+  "verdict": "REPAIRED_AND_RESUMED"
+}
