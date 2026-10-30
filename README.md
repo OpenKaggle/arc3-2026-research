@@ -5,29 +5,54 @@
 > authorization to join, inspect private evaluation material, or make a
 > competition submission.
 
-Status at `2026-09-11T01:12:43Z`: **conditional GO, identity-blocked**.
+Status at `2026-09-11T01:12:43Z`: identity-blocked planning snapshot —
+**superseded on 2026-10-15: the line was SEALED after the preregistered local
+baseline gate failed; the competition entry window closed on 2026-10-26 and no
+Join ever occurred.**
 
 The rules, local assets, contamination boundary, and a CPU-only baseline plan
 have been audited. The logged-in Kaggle account has **not** joined this
 competition. No competition data was downloaded, no evaluation answer was
 opened, no submission was made, and no GPU was started.
 
-The only authorized next step is completion of
-[`docs/IDENTITY_GATE.md`](docs/IDENTITY_GATE.md). Joining remains blocked until
-the required personal facts are supplied by the account holder and pass that
-gate.
+The identity gate ([`docs/IDENTITY_GATE.md`](docs/IDENTITY_GATE.md)) is retained
+below as an audit record of the planning state. With the entry window closed it
+has no remaining operational effect.
 
 ## Current decision
 
-- **Legally/operationally feasible:** yes, subject to the identity and IP gate.
-- **Prize feasibility:** unproven. The live public leaderboard snapshot had a
-  first-place score of `11.04` and third-place score of `7.63`; a fresh system
-  has no evidence yet that it can approach those scores.
-- **Milestone 2 feasibility:** time remains until `2026-09-30 23:59 UTC`, but
-  no prize claim is justified until a public, reproducible, license-clean
-  notebook and a non-trivial sealed local result exist.
-- **Compute posture:** CPU only. GPU, Kaggle submission, and private-evaluation
-  reruns are separately gated.
+**Terminal state: SEALED — gate failed as preregistered (2026-10-15); entry
+window closed 2026-10-26, no Join occurred.**
+
+- The local clean-room 24-hour baseline was executed against the preregistered
+  gate. The R1 rerun **FAILED that gate**: the baseline completed **4 levels**
+  in total versus **8 levels** for the uniform-random control anchor
+  (`anchor_b`), so the preregistered requirement of scoring strictly above the
+  best anchor was not met.
+- Per the preregistered stop rule ("if baseline <= best anchor or 0 levels,
+  the 24h gate fails and the line is sealed unless a protocol repair is
+  justified"), the line was **sealed on 2026-10-15**. The single permitted
+  repair (the ACTION6 coordinate-convention fix, baseline 3→4 levels) was
+  applied and retested; no further repairs or 24-hour attempts were made.
+- Gate integrity facts at seal were green (100% action legality, zero crashes,
+  baseline p99 latency 12.81 ms, peak RSS 159.1 MiB); the gate failed only on
+  the level-count comparison against the control anchor.
+- The competition entry window closed on 2026-10-26. The account never joined:
+  no competition data was downloaded, no submission was made, and no GPU was
+  used on the competition.
+
+Seal receipts (paths relative to this repository):
+
+- [`receipts/24h_baseline/seal_24h_baseline_2026-10-15.json`](receipts/24h_baseline/seal_24h_baseline_2026-10-15.json)
+  — R0 pre-fix run: baseline 3 levels vs anchor 8; sealed gate-failed.
+- [`receipts/24h_baseline_r1/seal_r1_2026-10-15.json`](receipts/24h_baseline_r1/seal_r1_2026-10-15.json)
+  — R1 rerun after the single-factor repair: baseline 4 levels, still at or
+  below the 8-level anchor; verdict `SEALED_GATE_FAILED_AS_PREREGISTERED`.
+- [`receipts/24h_baseline_r1/gate_fold_20261015T123234Z.json`](receipts/24h_baseline_r1/gate_fold_20261015T123234Z.json)
+  — folded gate facts (`gate_result: FAILED_AS_PREREGISTERED`).
+- [`receipts/24h_baseline_diagnosis_2026-10-15/R1_DECISION_2026-10-15.json`](receipts/24h_baseline_diagnosis_2026-10-15/R1_DECISION_2026-10-15.json)
+  and [`docs/GATE_DIAGNOSIS_ACTION6_2026-10-15.md`](docs/GATE_DIAGNOSIS_ACTION6_2026-10-15.md)
+  — diagnosis and decision record for the single repair factor.
 
 ## Documents
 
