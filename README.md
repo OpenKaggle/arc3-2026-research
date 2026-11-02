@@ -5,6 +5,8 @@
 > authorization to join, inspect private evaluation material, or make a
 > competition submission.
 
+**Publication gate: 2026-11-02T23:59Z** (= arc-prize-2026-arc-agi-3 submission end; do not make public before this time)
+
 Status at `2026-09-11T01:12:43Z`: identity-blocked planning snapshot —
 **superseded on 2026-10-15: the line was SEALED after the preregistered local
 baseline gate failed; the competition entry window closed on 2026-10-26 and no
